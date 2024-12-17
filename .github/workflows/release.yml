@@ -40,6 +40,6 @@ jobs:
     - name: Sign the image with Cosign
       env:
         COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
-        COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_KEY }}
+        COSIGN_KEY: ${{ secrets.COSIGN_KEY }}
       run: cosign sign ${{ secrets.DOCKER_USERNAME }}/test-docker-sign:${{ github.event.release.tag_name }}
 
