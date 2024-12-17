@@ -32,10 +32,8 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/test-docker-sign:${{ github.event.release.tag_name }}
 
-    - name: Sign the Docker image
-      uses: sigstore/cosign-installer@v3
-      with:
-        cosign-release: 'v2.1.1'
+    - name: Set up cosign
+      uses: sigstore/cosign-installer@main
 
     - name: Sign the image with Cosign
       env:
