@@ -38,5 +38,5 @@ jobs:
         cosign-release: 'v2.1.1'
 
     - name: Sign the image with Cosign
-      run: cosign sign --key ${{ secrets.COSIGN_KEY }} ${{ secrets.DOCKER_USERNAME }}/hello-world-app:${{ github.event.release.tag_name }}
+      run: cosign sign --key ${{ secrets.COSIGN_KEY }} ${{ secrets.DOCKER_USERNAME }}/test-docker-sign:${{ github.event.release.tag_name }}
 
