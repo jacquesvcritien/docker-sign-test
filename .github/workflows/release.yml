@@ -41,5 +41,6 @@ jobs:
       env:
         COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
         COSIGN_KEY: ${{ secrets.COSIGN_KEY }}
-      run: cosign sign --key env://COSIGN_KEY ${{ secrets.DOCKER_USERNAME }}/test-docker-sign:${{ github.event.release.tag_name }}
+      run: |
+          ccosign sign --key env://COSIGN_KEY ${{ secrets.DOCKER_USERNAME }}/test-docker-sign:${{ github.event.release.tag_name }}
       shell: bash
